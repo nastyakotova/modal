@@ -1,0 +1,24 @@
+$color_1: rgb(218, 218, 218);
+$color_2: rgb(42, 42, 42);
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+
+  button {
+    font-size: 32px;
+    font-family: monospace;
+    padding: 10px 30px;
+    border-radius: 50vh;
+    border: none;
+    color: $color_2;
+    background-color: $color_1;
+
+    &:hover {
+      color: $color_1;
+      background-color: $color_2;
+    }
+  }
+}
+
