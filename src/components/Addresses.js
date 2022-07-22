@@ -8,7 +8,7 @@ export default function Addresses({ data }) {
       <ul className="adress-list">
         {data.map((data, index) => {
           return (index < page * 9 && index >= (page - 1) * 9) ? (
-            <li className="adress-list-item">
+            <li key={index} className="adress-list-item">
               <p className="adress">{data.city}</p>
               <p className="adress">{data.street}</p>
               <a

@@ -3,6 +3,7 @@ import map from "../image/map.png";
 import { data } from "../data/data";
 import Addresses from "./Addresses";
 import Forms from "./Forms";
+import address from "../image/1.svg";
 
 export default function Content({ setModalActive }) {
   return (
@@ -22,7 +23,11 @@ export default function Content({ setModalActive }) {
 
       <Forms />
 
-      <img src={map} alt="Карта" className="map-image" />
+      <div className="imd-div">
+        <img src={map} alt="Карта" className="map-image" />
+        <img src={address} alt="Метка" className="map-address" />
+      </div>
+      
 
       <div></div>
 

@@ -204,10 +204,20 @@ h1 {
   }
 }
 
+.imd-div {
+  position: relative;
+}
+
 .map-image {
   max-width: 890px;
   width: 100%;
   margin-top: 24px;
+}
+
+.map-address {
+  position: absolute;
+  top: 120px;
+  left: 300px;
 }
 
 .add-button {
