@@ -1,5 +1,3 @@
-import'./Modal.scss';
-
 export default function Modal({ modalActive, setModalActive, children }) {
   return (
     <div

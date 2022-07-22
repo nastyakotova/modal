@@ -1,10 +1,9 @@
-import './App.scss';
-import Modal from '../Modal/Modal';
-import Content from '../Content/Content';
+import Modal from './Modal';
+import Content from './Content';
 import { useState } from 'react';
 
 export default function App() {
-  const [modalActive, setModalActive] = useState(false);
+  const [modalActive, setModalActive] = useState(true);
 
   return (
     <>
@@ -15,7 +14,7 @@ export default function App() {
         modalActive={modalActive}
         setModalActive={setModalActive}
       >
-        <Content />
+        <Content setModalActive={setModalActive} />
       </Modal>
     </>
   );
