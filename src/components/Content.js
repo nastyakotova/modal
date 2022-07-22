@@ -1,72 +1,37 @@
 import icon from "../icons/x.svg";
-import grid from "../icons/grid.svg";
-import printer from "../icons/printer.svg";
-import list from "../icons/list.svg";
 import map from "../image/map.png";
+import { data } from "../data/data";
+import Addresses from "./Addresses";
+import Forms from "./Forms";
 
 export default function Content({ setModalActive }) {
   return (
     <>
       <h1>Почтовые отделения</h1>
       {/* Поменять на ссылку */}
-      <button
+      <a
+        href="/"
         className="close-button"
-        onClick={() => setModalActive(false)}
+        onClick={(event) => {
+          event.preventDefault();
+          setModalActive(false);
+        }}
       >
         <img src={icon} alt="Закрыть" />
-      </button>
+      </a>
 
-      <form  className="search-form">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Укажите адрес или индекс почтового отделения"
-        />
-        <button
-          className="search-button"
-          onClick={(event) => event.preventDefault()}
-        >Поиск</button>
-      </form>
+      <Forms />
 
-      <form className="settings-container">
-        <div className="settings-label">Параметры фильма</div>
+      <img src={map} alt="Карта" className="map-image" />
 
-        <select className="settings-select">
-          <option>Область</option>
-          <option>Ленинградская область</option>
-          <option>Ленинградская область</option>
-          <option>Ленинградская область</option>
-        </select>
-        <select className="settings-select">
-          <option>Город</option>
-          <option>Санкт-Петербург</option>
-          <option>Санкт-Петербург</option>
-          <option>Санкт-Петербург</option>
-        </select>
-        <select className="settings-select">
-          <option>Район/Округ</option>
-          <option>Центральный</option>
-          <option>Адмиралтейский</option>
-          <option>Приморский</option>
-        </select>
-        <button
-          type="submit"
-          className="settings-button"
-          onClick={(event) => event.preventDefault()}
-        >Применить</button>
+      <div></div>
 
-        <button className="icon-button">
-          <img src={list} alt="Menu" />
-        </button>
-        <button className="icon-button">
-          <img src={grid} alt="Grid" />
-        </button>
-        <button className="icon-button">
-          <img src={printer} alt="Printer" />
-        </button>
-      </form>
+      <br />
+      <button
+        className="add-button"
+      >Добавить все отображаемые отделения</button>
 
-      <img src={map} alt="Карта" />
+      <Addresses data={data} />
     </>
   );
 }

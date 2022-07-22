@@ -6,6 +6,7 @@ $color_3: #040811;
 $color_4: #9B9CA0;
 $color_5: #D9DADB;
 $color_6: #EEF2FB;
+$color_7: #4F5258;
 
 %font-style {
   font-family: 'Montserrat';
@@ -169,14 +170,7 @@ h1 {
     margin: 0 16px 0 0;
     width: 160px;
     height: 40px;
-  }
-
-  .settings-select select {
-    
-  }
-
-  .settings-select:after {
-    content: "";
+    color: $color_7;
   }
 
   .settings-select:focus-visible {
@@ -210,8 +204,67 @@ h1 {
   }
 }
 
-img {
+.map-image {
   max-width: 890px;
   width: 100%;
   margin-top: 24px;
+}
+
+.add-button {
+  @extend %button;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.adress-list {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .adress-list-item {
+    background-color: $color_6;
+    margin-bottom: 16px;
+    width: 286px;
+    height: 116px;
+    border-radius: 3px;
+    padding: 24px;
+
+    .adress {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    .add-adress {
+      color: #2D00FF;
+      font-size: 12px;
+    }
+  }
+}
+
+.line {
+  border-top: 1px solid $color_5;
+}
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  
+  .page-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: $color_6;
+    margin: 24px 4px 0 4px;
+    font-size: 16px;
+    color: $color_7;
+  }
+
+  .active {
+    background-color: $color_3;
+    color: $color_1;
+  }
 }
