@@ -47,9 +47,13 @@ body {
   justify-content: center;
   padding-top: 100px;
 
-  // TODO: Change on class
-  button {
+  .show-modal-button {
     @extend %button;
+  }
+
+  .show-modal-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(233, 13, 0, 0.25);
   }
 }
 
@@ -88,7 +92,7 @@ body {
   }
 }
 
-h1 {
+.title {
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
@@ -126,6 +130,11 @@ h1 {
     padding-left: 16px;
   }
 
+  .search-input:hover {
+    @include border-styles($color_2);
+    outline: 2px solid $color_2;
+  }
+
   .search-input:focus-visible {
     @include border-styles($color_2);
     outline: 2px solid $color_2;
@@ -136,6 +145,11 @@ h1 {
     width: 130px;
     height: 40px;
     margin-left: 16px;
+  }
+
+  .search-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(233, 13, 0, 0.25);
   }
 }
 
@@ -173,6 +187,11 @@ h1 {
     color: $color_7;
   }
 
+  .settings-select:hover {
+    @include border-styles($color_2);
+    outline: 2px solid $color_2;
+  }
+
   .settings-select:focus-visible {
     @include border-styles($color_2);
     outline: 2px solid $color_2;
@@ -188,6 +207,11 @@ h1 {
     margin-right: 41px - 8px;
   }
 
+  .settings-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(101, 89, 175, 0.25);
+  }
+
   .icon-button {
     @extend %pm-none;
     background-color: $color_6;
@@ -201,6 +225,11 @@ h1 {
       width: 16px;
       height: 16px;
     }
+  }
+
+  .icon-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(101, 89, 175, 0.25);
   }
 }
 
@@ -224,6 +253,11 @@ h1 {
   @extend %button;
   width: 100%;
   margin-top: 16px;
+}
+
+.add-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(233, 13, 0, 0.25);
 }
 
 .adress-list {
@@ -252,6 +286,11 @@ h1 {
       font-size: 12px;
     }
   }
+
+  .adress-list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(101, 89, 175, 0.25);
+  }
 }
 
 .line {
@@ -271,6 +310,11 @@ h1 {
     margin: 24px 4px 0 4px;
     font-size: 16px;
     color: $color_7;
+  }
+
+  .page-num:hover {
+    background-color: $color_3;
+    color: $color_1;
   }
 
   .active {

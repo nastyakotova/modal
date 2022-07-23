@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Addresses({ data }) {
+export default function Addresses({ data, setMarkSctive }) {
   const [page, setPage] = useState(1);
 
   return (
@@ -14,7 +14,10 @@ export default function Addresses({ data }) {
               <a
                 href="/"
                 className="add-adress"
-                onClick={(event) => event.preventDefault()}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setMarkSctive(prev => !prev);
+                }}
               >+ Добавить</a>
             </li>
           ) : '';
@@ -28,7 +31,7 @@ export default function Addresses({ data }) {
           type="button"
           value="<"
           className="page-num"
-          onClick={() => setPage((prev) => setPage(prev - 1))}
+          // onClick={() => setPage((prev) => setPage(prev - 1))}
         />
         <input
           type="button"
@@ -61,7 +64,7 @@ export default function Addresses({ data }) {
           type="button"
           value=">"
           className="page-num"
-          onClick={() => setPage((prev) => setPage(prev + 1))}
+          // onClick={() => setPage((prev) => setPage(prev + 1))}
         />
       </div>
     </>

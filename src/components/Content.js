@@ -4,12 +4,15 @@ import { data } from "../data/data";
 import Addresses from "./Addresses";
 import Forms from "./Forms";
 import address from "../image/1.svg";
+import { useState } from "react";
 
 export default function Content({ setModalActive }) {
+  const [markActive, setMarkSctive] = useState(false);
+
   return (
     <>
-      <h1>Почтовые отделения</h1>
-      {/* Поменять на ссылку */}
+      <h1 className="title">Почтовые отделения</h1>
+
       <a
         href="/"
         className="close-button"
@@ -25,18 +28,15 @@ export default function Content({ setModalActive }) {
 
       <div className="imd-div">
         <img src={map} alt="Карта" className="map-image" />
-        <img src={address} alt="Метка" className="map-address" />
+        {markActive && <img src={address} alt="Метка" className="map-address" />}
       </div>
-      
-
-      <div></div>
 
       <br />
       <button
         className="add-button"
       >Добавить все отображаемые отделения</button>
 
-      <Addresses data={data} />
+      <Addresses data={data} setMarkSctive={setMarkSctive} />
     </>
   );
 }

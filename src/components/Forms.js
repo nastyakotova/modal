@@ -6,25 +6,25 @@ export default function Forms({ data }) {
   return (
     <>
       <form  className="search-form">
-      <input
-        type="text"
-        className="search-input"
-        placeholder="Укажите адрес или индекс почтового отделения"
-      />
-      <button
-        className="search-button"
-        onClick={(event) => event.preventDefault()}
-      >Поиск</button>
-    </form>
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Укажите адрес или индекс почтового отделения"
+        />
+        <button
+          className="search-button"
+          onClick={(event) => event.preventDefault()}
+        >Поиск</button>
+      </form>
 
     <form className="settings-container">
       <div className="settings-label">Параметры фильма</div>
 
       <select className="settings-select">
         <option>Область</option>
-        <option>Ленинградская область</option>
-        <option>Ленинградская область</option>
-        <option>Ленинградская область</option>
+        <option>Ленинградская</option>
+        <option>Ленинградская</option>
+        <option>Ленинградская</option>
       </select>
       <select className="settings-select">
         <option>Город</option>
@@ -44,13 +44,13 @@ export default function Forms({ data }) {
         onClick={(event) => event.preventDefault()}
       >Применить</button>
 
-      <button className="icon-button">
+      <button className="icon-button" onClick={(event) => event.preventDefault()}>
         <img src={list} alt="Menu" />
       </button>
-      <button className="icon-button">
+      <button className="icon-button" onClick={(event) => event.preventDefault()}>
         <img src={grid} alt="Grid" />
       </button>
-      <button className="icon-button">
+      <button className="icon-button" onClick={(event) => event.preventDefault()}>
         <img src={printer} alt="Printer" />
       </button>
     </form>

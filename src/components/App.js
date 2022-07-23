@@ -3,14 +3,14 @@ import Content from './Content';
 import { useState } from 'react';
 
 export default function App() {
-  const [modalActive, setModalActive] = useState(true);
+  const [modalActive, setModalActive] = useState(false);
 
   return (
     <>
       <div className="container">
-        <button onClick={() => setModalActive(true)}>Modal</button>
+        <button className="show-modal-button" onClick={() => setModalActive(true)}>Modal</button>
       </div>
-      <Modal 
+      <Modal
         modalActive={modalActive}
         setModalActive={setModalActive}
       >
