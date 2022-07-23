@@ -3,7 +3,7 @@ import Content from './Content';
 import { useState } from 'react';
 
 export default function App() {
-  const [modalActive, setModalActive] = useState(false);
+  const [modalActive, setModalActive] = useState(true);
 
   return (
     <>

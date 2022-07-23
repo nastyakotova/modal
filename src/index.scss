@@ -79,12 +79,14 @@ body {
   .content {
     max-width: 970px;
     width: 100%;
+    max-height: 100%;
     border-radius: 3px;
     background-color: $color_1;
     transform: scale(0.5);
     transition: 0.2s all;
     position: relative;
     padding: 32px 40px 40px 40px;
+    overflow: auto;
   }
   
   .content.active {
@@ -126,7 +128,6 @@ body {
     color: $color_4;
     height: 40px;
     width: 100%;
-    min-width: 321px;
     padding-left: 16px;
   }
 
@@ -169,63 +170,76 @@ body {
     text-align: center;
     font-size: 14px;
     position: absolute;
-    bottom: 66px;
+    width: 200px;
+    top: -8px;
     left: 0;
     background: $color_1;
     height: 30px;
   }
 
-  .settings-select {
-    @include border-styles($color_5);
-    @extend %font-style;
-    padding-left: 16px;
-    font-weight: 400;
-    background: none;
-    margin: 0 16px 0 0;
-    width: 160px;
-    height: 40px;
-    color: $color_7;
-  }
+  .select-wrap {
+    display: flex;
+    flex-wrap: nowrap;
 
-  .settings-select:hover {
-    @include border-styles($color_2);
-    outline: 2px solid $color_2;
-  }
-
-  .settings-select:focus-visible {
-    @include border-styles($color_2);
-    outline: 2px solid $color_2;
-  }
-
-  .settings-button {
-    @extend %button;
-    background-color: $color_6;
-    box-shadow: none;
-    color: $color_3;
-    width: 137px;
-    padding: 12px 24px;
-    margin-right: 41px - 8px;
-  }
-
-  .settings-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(101, 89, 175, 0.25);
-  }
-
-  .icon-button {
-    @extend %pm-none;
-    background-color: $color_6;
-    margin: 0 0 0 8px;
-    border: none;
-    width: 40px;
-    height: 40px;
-
-    img {
-      @extend %pm-none;
-      width: 16px;
-      height: 16px;
+    .settings-select {
+      @include border-styles($color_5);
+      @extend %font-style;
+      padding-left: 16px;
+      font-weight: 400;
+      background: none;
+      margin: 0 16px 0 0;
+      width: 160px;
+      height: 40px;
+      color: $color_7;
+    }
+  
+    .settings-select:hover {
+      @include border-styles($color_2);
+      outline: 2px solid $color_2;
+    }
+  
+    .settings-select:focus-visible {
+      @include border-styles($color_2);
+      outline: 2px solid $color_2;
+    }
+  
+    .settings-button {
+      @extend %button;
+      background-color: $color_6;
+      box-shadow: none;
+      color: $color_3;
+      width: 137px;
+      padding: 12px 24px;
+      margin-right: 41px - 8px;
+    }
+  
+    .settings-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(101, 89, 175, 0.25);
     }
   }
+
+
+  .button-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .icon-button {
+      @extend %pm-none;
+      background-color: $color_6;
+      margin: 0 4px 0 4px;
+      border: none;
+      width: 40px;
+      height: 40px;
+  
+      img {
+        @extend %pm-none;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
 
   .icon-button:hover {
     transform: translateY(-3px);
@@ -320,5 +334,95 @@ body {
   .active {
     background-color: $color_3;
     color: $color_1;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .search-form {
+    flex-wrap: wrap;
+
+    .search-button {
+      margin: 16px 0 0 0;
+      width: 100%;
+    }
+  }
+
+  .add-button {
+    height: auto;
+  }
+
+  .settings-container {
+    height: auto;
+    flex-direction: column;
+
+    .select-wrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+
+      .settings-select {
+        width: 100%;
+        margin: 0 0 10px 0;
+      }
+
+      .settings-button {
+        margin: 0 auto;
+      }
+    }
+
+    .button-wrap {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .stepper {    
+    .page-num {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .adress-list {  
+    justify-content: center;
+
+    .adress-list-item {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .settings-container {
+    height: auto;
+    flex-direction: column;
+
+    .select-wrap {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      .settings-button {
+        margin: 0 auto;
+      }
+    }
+
+    .button-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+    }
+  }
+
+  .stepper {    
+    .page-num {
+      height: 36px;
+      width: 36px;
+    }
+  }
+
+  .adress-list {  
+    justify-content: space-around;
   }
 }
